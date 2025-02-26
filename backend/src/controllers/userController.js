@@ -6,6 +6,7 @@ const authService = require('../services/authServices');
 exports.signup = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
+  
   try {
     // Check if user already exists
     const userExists = await User.findOne({ email });
