@@ -3,8 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 
+const passport = require('passport');
+
 /****** Import configuration (DB & cors) */
 require('./src/config/database');
+require("./src/config/passport")
 const cors = require('./src/config/cors');
 
 /*** Import routes */
@@ -16,6 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors);
+app.use(passport.initialize());
+
 
 
 /*  Routes */

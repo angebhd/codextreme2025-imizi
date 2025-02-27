@@ -10,8 +10,9 @@ const userSchema = new mongoose.Schema({
       score: Number,
       
     }],
-    password: {type: String, required: true,},
+    password: {type: String},
     invite: { type: mongoose.Schema.Types.ObjectId, ref: 'Family'}, //invite link
+    googleId: { type: String }
   });
 
 // Hash password before saving
