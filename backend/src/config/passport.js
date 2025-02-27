@@ -29,6 +29,7 @@ passport.use(
             lastName: profile.name.familyName,
             email: profile.emails[0].value,
             password: "", // Google users don't need a password
+            googleId: profile.id
           });
           await user.save();
         }
