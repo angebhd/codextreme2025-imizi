@@ -10,7 +10,9 @@ const userSchema = new mongoose.Schema({
   }],
   password: { type: String },
   invite: { type: mongoose.Schema.Types.ObjectId, ref: 'Family' }, //invite link
-  googleId: { type: String }
+  googleId: { type: String },
+  role: { type: String, required: true, enum: ['member', 'child', 'parent'], default: "member" }
+
 });
 
 // Hash password before saving
