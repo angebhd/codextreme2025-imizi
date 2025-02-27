@@ -6,7 +6,6 @@ const authService = require('../services/authServices');
 exports.signup = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
 
-  
   try {
     // Check if user already exists
     const userExists = await User.findOne({ email });
@@ -50,4 +49,17 @@ exports.login = async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 };
+
+exports.googleLogin = async (req, res) => {
+    
+  
+  try {
+    const token = authService.generateToken(req.user);    
+    res.status(200).json({ message: 'Login successful', token });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
+
 
