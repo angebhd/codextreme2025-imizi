@@ -14,6 +14,8 @@ const cors = require('./src/config/cors');
 const userRoutes = require('./src/routes/userRoutes');
 const familyRoutes = require('./src/routes/familyRoutes');
 const taskRoutes = require('./src/routes/taskRoutes');
+const chatRoutes = require('./src/routes/chatRoutes');
+
 
 /* Create express and http server */
 const app = express();
@@ -32,6 +34,8 @@ app.use(passport.initialize());
 app.use('/api/users', userRoutes);
 app.use('/api/family', familyRoutes);
 app.use('/api/task', taskRoutes);
+app.use('/api/chat', chatRoutes);
+
 
 /* Import and initialize websocket */
 
