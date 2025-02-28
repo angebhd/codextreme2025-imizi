@@ -2,11 +2,11 @@ const Family = require('../models/Family');
 const User = require('../models/User');
 const authService = require('../services/authServices');
 
+
 exports.create = async (req, res) => {
     const { familyName } = req.body;
     const user = req.user;
     // console.log(user);
-
     try {
         // Check if user already exists
         // const email = user.email
