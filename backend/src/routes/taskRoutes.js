@@ -4,6 +4,7 @@ const { authenticate, isParent } = require('../middlewares/authMiddleware')
 const router = express.Router();
 
 router.post('/create', authenticate, isParent, taskController.create);
+router.post('/changeStatus', authenticate, taskController.changeStatus);
 
 // router.post('/invite', authenticate, taskController.invite);
 // router.post('/join', authenticate, taskController.join);
