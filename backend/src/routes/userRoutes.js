@@ -9,7 +9,7 @@ router.post('/signup', userController.signup);
 
 // Login Route
 router.post('/login', userController.login);
-
+router.post('/getData', authenticate, userController.getData);
 // Google OAuth Routes
 router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'], session:false }));
 
