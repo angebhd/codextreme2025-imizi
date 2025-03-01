@@ -5,9 +5,7 @@ const userSchema = new mongoose.Schema({
   lastName: { type: String, },
   email: { type: String, required: true, unique: true },
   family: { type: mongoose.Schema.Types.ObjectId, ref: 'Family' },
-  tasks: [{
-    id: { type: mongoose.Schema.Types.ObjectId, ref: 'Task' },
-  }],
+  tasks: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }], // Store ObjectIds directly
   password: { type: String },
   invite: { type: mongoose.Schema.Types.ObjectId, ref: 'Family' }, //invite link
   googleId: { type: String },
